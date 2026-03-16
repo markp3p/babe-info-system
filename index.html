@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Person Info CRUD System - Fixed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -524,24 +525,24 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌟 BABE DATABASE</h1>
+            <h1><i class="fa-solid fa-database"></i> BABE DATABASE</h1>
             <p>An all-in-one database app about popular AV actresses, female video game characters, and female characters from anime and manga.</p>
-            <small style="color: #666;">✨ Powered by Sexiness</small>
+            <small style="color: #666;"><i class="fa-solid fa-bolt"></i> Powered by Sexiness</small>
         </div>
 
         <!-- Configuration Section -->
         <div id="configSection" class="config-section">
-            <h3>🔧 Configuration</h3>
+            <h3><i class="fa-solid fa-gear"></i> Configuration</h3>
             <label for="scriptUrl">Google Apps Script Web App URL:</label>
             <input type="text" id="scriptUrl" class="config-input" 
                    placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
                    value="">
             <div class="test-connection">
                 <button class="btn btn-secondary" onclick="testConnection()">
-                    🔄 Test Connection
+                    <i class="fa-solid fa-rotate"></i> Test Connection
                 </button>
                 <button class="btn btn-success" onclick="saveConfiguration()">
-                    💾 Save & Load Data
+                    <i class="fa-solid fa-floppy-disk"></i> Save & Load Data
                 </button>
             </div>
             <div id="connectionStatus"></div>
@@ -552,27 +553,27 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                 <h2 style="color: #4a5568;">Dashboard</h2>
                 <button class="btn btn-success" onclick="showCreateForm()" id="addBtn" disabled>
-                    ➕ Add New
+                    <i class="fa-solid fa-plus"></i> Add New
                 </button>
             </div>
             
-            <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search by name, ID, or category..." oninput="performSearch()">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search by name, ID, or category..." oninput="performSearch()">
             
             <div class="category-buttons">
                 <button class="category-btn active" onclick="filterByCategory('all')" data-category="all">
-                    🌟 All Categories
+                    <i class="fa-solid fa-star"></i> All Categories
                 </button>
                 <button class="category-btn" onclick="filterByCategory('actress')" data-category="actress">
-                    🎭 Actress
+                    <i class="fa-solid fa-film"></i> Actress
                 </button>
                 <button class="category-btn" onclick="filterByCategory('anime')" data-category="anime">
-                    📺 Anime
+                    <i class="fa-solid fa-tv"></i> Anime
                 </button>
                 <button class="category-btn" onclick="filterByCategory('manga')" data-category="manga">
-                    📚 Manga
+                    <i class="fa-solid fa-book"></i> Manga
                 </button>
                 <button class="category-btn" onclick="filterByCategory('game')" data-category="game">
-                    🎮 Game
+                    <i class="fa-solid fa-gamepad"></i> Game
                 </button>
             </div>
 
@@ -580,25 +581,25 @@
 
             <div id="topLists" class="top-lists">
                 <div class="list-container">
-                    <h3>🎭 Top Actresses</h3>
+                    <h3><i class="fa-solid fa-film"></i> Top Actresses</h3>
                     <div id="actressList" class="category-list">
                         <div class="empty-state">Configure connection first</div>
                     </div>
                 </div>
                 <div class="list-container">
-                    <h3>📺 Top Anime Characters</h3>
+                    <h3><i class="fa-solid fa-tv"></i> Top Anime Characters</h3>
                     <div id="animeList" class="category-list">
                         <div class="empty-state">Configure connection first</div>
                     </div>
                 </div>
                 <div class="list-container">
-                    <h3>📚 Top Manga Characters</h3>
+                    <h3><i class="fa-solid fa-book"></i> Top Manga Characters</h3>
                     <div id="mangaList" class="category-list">
                         <div class="empty-state">Configure connection first</div>
                     </div>
                 </div>
                 <div class="list-container">
-                    <h3>🎮 Top Game Characters</h3>
+                    <h3><i class="fa-solid fa-gamepad"></i> Top Game Characters</h3>
                     <div id="gameList" class="category-list">
                         <div class="empty-state">Configure connection first</div>
                     </div>
@@ -616,7 +617,7 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                 <h2 id="formTitle" style="color: #4a5568;">Add New Person</h2>
                 <button class="btn btn-secondary" onclick="showDashboard()">
-                    ← Dashboard
+                    <i class="fa-solid fa-arrow-left"></i>
                 </button>
             </div>
 
@@ -632,10 +633,10 @@
                         <label for="category">Category *</label>
                         <select id="category" name="category" required>
                             <option value="">Select Category</option>
-                            <option value="actress">🎭 Actress</option>
-                            <option value="anime">📺 Anime Character</option>
-                            <option value="manga">📚 Manga Character</option>
-                            <option value="game">🎮 Game Character</option>
+                            <option value="actress">Actress</option>
+                            <option value="anime">Anime Character</option>
+                            <option value="manga">Manga Character</option>
+                            <option value="game">Game Character</option>
                         </select>
                     </div>
                 </div>
@@ -694,10 +695,10 @@
                     <div style="display:flex;gap:10px;align-items:flex-start;">
                         <div style="flex:1;">
                             <input type="text" id="imageurl" name="imageurl" placeholder="https://example.com/photo.jpg" oninput="previewImage(this.value)">
-                            <small style="color:#718096;">Paste any image link from the web. The face will be auto-detected for cropping.</small>
+                            <small style="color:#718096;"><i class="fa-solid fa-circle-info"></i> Paste any image link from the web. The face will be auto-detected for cropping.</small>
                         </div>
                         <div class="image-preview-wrap">
-                            <div class="preview-placeholder" id="previewPlaceholder">👤</div>
+                            <div class="preview-placeholder" id="previewPlaceholder"><i class="fa-solid fa-user"></i></div>
                             <img id="imagePreview" alt="Preview" onload="onPreviewLoad(this)" onerror="onPreviewError(this)">
                         </div>
                     </div>
@@ -720,10 +721,10 @@
 
                 <div class="action-buttons">
                     <button type="submit" class="btn btn-success" id="saveBtn">
-                        💾 Save Person
+                        <i class="fa-solid fa-floppy-disk"></i> Save Person
                     </button>
                     <button type="button" class="btn btn-secondary" onclick="showDashboard()">
-                        Cancel
+                        <i class="fa-solid fa-xmark"></i> Cancel
                     </button>
                 </div>
             </form>
@@ -733,14 +734,14 @@
         <div id="detailPage" class="page">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                 <button class="btn btn-secondary" onclick="showDashboard()">
-                    ← Back to Dashboard
+                    <i class="fa-solid fa-arrow-left"></i> Dashboard
                 </button>
                 <div>
                     <button id="editBtn" class="btn" onclick="editCurrentPerson()">
-                        ✏️ Edit
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
                     </button>
                     <button id="deleteBtn" class="btn btn-danger" onclick="deleteCurrentPerson()">
-                        🗑️ Delete
+                        <i class="fa-solid fa-trash"></i> Delete
                     </button>
                 </div>
             </div>
@@ -1033,13 +1034,14 @@
                 
                 listElement.innerHTML = categoryPersons.map((person, index) => {
                     const rankClass = index === 0 ? 'gold' : index === 1 ? 'silver' : index === 2 ? 'bronze' : '';
-                    const rankLabel = index === 0 ? '🥇 #1' : index === 1 ? '🥈 #2' : index === 2 ? '🥉 #3' : `#${index + 1}`;
+                    const rankLabel = index === 0 ? '#1' : index === 1 ? '#2' : index === 2 ? '#3' : `#${index + 1}`;
+                    const rankIcon = index === 0 ? '<i class="fa-solid fa-trophy"></i>' : index === 1 ? '<i class="fa-solid fa-medal"></i>' : index === 2 ? '<i class="fa-solid fa-award"></i>' : '';
                     const rating = parseFloat(person.rating) || 0;
                     const starsHtml = [1,2,3,4,5].map(n => `<span class="star ${n <= rating ? 'filled' : ''}">★</span>`).join('');
                     const avatarHtml = person.imageurl
                         ? `<img class="avatar" src="${person.imageurl}" alt="${person.name}" data-id="${person.id}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" onload="applyFacePosition(this)">`
-                        + `<div class="avatar-placeholder" style="display:none">${(person.name||'?')[0].toUpperCase()}</div>`
-                        : `<div class="avatar-placeholder">${(person.name||'?')[0].toUpperCase()}</div>`;
+                        + `<div class="avatar-placeholder" style="display:none"><i class="fa-solid fa-user"></i></div>`
+                        : `<div class="avatar-placeholder"><i class="fa-solid fa-user"></i></div>`;
                     return `
                     <div class="person-item" onclick="showDetailView(${JSON.stringify(person).replace(/"/g, '&quot;')})">
                         ${avatarHtml}
@@ -1054,7 +1056,7 @@
                             </div>
                         </div>
                         <div class="person-item-right">
-                            <span class="rank-badge ${rankClass}">${rankLabel}</span>
+                            <span class="rank-badge ${rankClass}">${rankIcon} ${rankLabel}</span>
                             <span class="person-category">${getCategoryIcon(category)} ${category}</span>
                         </div>
                     </div>`;
@@ -1064,7 +1066,7 @@
 
         function displayPersonDetail(person) {
             const categoryIcons = {
-                actress: '🎭',
+                aactress: '🎭',
                 anime: '📺',
                 manga: '📚',
                 game: '🎮'
@@ -1086,8 +1088,8 @@
 
             const avatarLargeHtml = imageurl
                 ? `<img class="avatar-large" src="${imageurl}" alt="${name}" onload="applyFacePosition(this)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                   <div class="avatar-placeholder-large" style="display:none">${name[0].toUpperCase()}</div>`
-                : `<div class="avatar-placeholder-large">${name[0].toUpperCase()}</div>`;
+                   <div class="avatar-placeholder-large" style="display:none"><i class="fa-solid fa-user"></i></div>`
+                : `<div class="avatar-placeholder-large"><i class="fa-solid fa-user"></i></div>`;
 
             const detailHTML = `
                 <div class="detail-header">
@@ -1095,7 +1097,7 @@
                     <div class="detail-id">ID: ${id}</div>
                     <h2>${name}</h2>
                     <div class="detail-category">
-                        ${categoryIcons[category] || '⭐'} ${category.charAt(0).toUpperCase() + category.slice(1)}
+                        ${categoryIcons[category] || '<i class="fa-solid fa-star"></i>'} ${category.charAt(0).toUpperCase() + category.slice(1)}
                     </div>
                 </div>
                 
@@ -1218,13 +1220,13 @@
         function onPreviewError(img) {
             img.style.display = 'none';
             document.getElementById('previewPlaceholder').style.display = 'flex';
-            document.getElementById('previewPlaceholder').textContent = '❌';
-            setTimeout(() => { document.getElementById('previewPlaceholder').textContent = '👤'; }, 2000);
+            document.getElementById('previewPlaceholder').innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
+            setTimeout(() => { document.getElementById('previewPlaceholder').innerHTML = '<i class="fa-solid fa-user"></i>'; }, 2000);
         }
 
         // Star rating functions
         let currentRating = 0;
-        const ratingLabels = ['', '⭐ Poor', '⭐⭐ Fair', '⭐⭐⭐ Good', '⭐⭐⭐⭐ Great', '⭐⭐⭐⭐⭐ Excellent'];
+        const ratingLabels = ['', 'Poor', 'Fair', 'Good', 'Great', 'Excellent'];
 
         function setRating(value) {
             currentRating = value;
@@ -1388,12 +1390,12 @@
         // Utility functions
         function getCategoryIcon(category) {
             const icons = {
-                actress: '🎭',
-                anime: '📺',
-                manga: '📚',
-                game: '🎮'
+                actress: '<i class="fa-solid fa-film"></i>',
+                anime: '<i class="fa-solid fa-tv"></i>',
+                manga: '<i class="fa-solid fa-book"></i>',
+                game: '<i class="fa-solid fa-gamepad"></i>'
             };
-            return icons[category] || '⭐';
+            return icons[category] || '<i class="fa-solid fa-star"></i>';
         }
 
         function formatDate(dateString) {
